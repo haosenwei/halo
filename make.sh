@@ -12,8 +12,7 @@ docker login --username=郝森伟 registry.cn-beijing.aliyuncs.com -p hao189108
 docker build -t halo:${version} .
 echo `docker images -a| grep halo | grep ${version} | awk '{print $3}' `
 docker tag `docker images -a| grep halo | grep ${version} | awk '{print $3}' ` registry.cn-beijing.aliyuncs.com/haosenwei/halo:${version}
-docker push registry.cn-beijing.aliyuncs.com/haosenwei/halo:${version}
-
+#docker push registry.cn-beijing.aliyuncs.com/haosenwei/halo:${version}
 
 docker stop `docker ps -a| grep halo | awk '{print $1}' `
 docker rm   `docker ps -a| grep halo | awk '{print $1}' `
